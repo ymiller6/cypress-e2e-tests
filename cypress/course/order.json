@@ -1,0 +1,77 @@
+{
+    "order": [
+        {
+            "identifier": "20250309|193315",
+            "orderName": "L0050196",
+            "orderNum": 193315,
+            "patient": {
+                "age": "2Y",
+                "ageFull": "2Y-2M-8D",
+                "birthDate": {
+                    "dateTime": "01-01-2023",
+                    "formattedDate": "01/01/2023"
+                },
+                "birthYear": 2023,
+                "code": 45767,
+                "defaultFormattedId": "345-346-677",
+                "defaultId": "345346677",
+                "defaultIdType": {
+                    "code": 2,
+                    "format": "NNN-NNN-NNN",
+                    "name": "SSN"
+                },
+                "firstName": "Qa",
+                "fullName": "Qa Patient",
+                "lastName": "Patient",
+                "middleName": "",
+                "sex": {
+                    "code": 0,
+                    "identifier": "UNKNOWN",
+                    "name": "Unknown"
+                }
+            },
+            "samples": [
+                {
+                    "accession": "01984",
+                    "cancelled": false,
+                    "collectionPlace": "",
+                    "container": {
+                        "code": 7,
+                        "color": "RED",
+                        "identifier": "0|7",
+                        "name": "SST",
+                        "shape": "STAR",
+                        "shortName": "SST",
+                        "type": "General"
+                    },
+                    "department": {
+                        "code": 1,
+                        "name": "Chemistry"
+                    },
+                    "identifier": "20250309|193315|1",
+                    "labPerformSite": {
+                        "code": 1,
+                        "name": "Netlims NJ Laboratory"
+                    },
+                    "quantity": "0.75",
+                    "received": false,
+                    "sampleSubstance": {
+                        "code": 38,
+                        "identifier": "1|38",
+                        "name": "Serum",
+                        "type": "General"
+                    },
+                    "sampleType": "",
+                    "serialTime": 0,
+                    "subLabel": "",
+                    "substance": "Serum",
+                    "unformattedAccession": "1984",
+                    "workbench": {
+                        "code": 41,
+                        "name": "LX"
+                    }
+                }
+            ]
+        }
+    ]
+}
