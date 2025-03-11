@@ -6,14 +6,15 @@ export default class OrderPage extends BasePage {
   // Selectors
   private menuButton: string = '[data-cy="st-button-menu"]';
   private menuSearchInput: string = '#menuSearchInput';
-  // We use cy.contains to select the "Order" link, so no dedicated property needed.
+  
   private facilityLabel: string = '#mat-mdc-form-field-label-12';
   private facilityInput: string = '#mat-input-5';
   private physicianField: string = '#mat-input-6';
   private patientInput: string = '#mat-input-7';
   private starIcon: string = '.RED > .d-flex > .mat-icon';
+  private starTooltip: string = '.st-tooltip';
   private albuminCheckbox: string = 'input[type="checkbox"]';
-  // The ordered tests list is verified by checking the body contains text “109 - ALB”
+  
   private saveButton: string = 'button:contains("Save")';
   private orderToast: string = '.st-font-18.st-bold.st-ellipsis.st-tooltip-trigger';
 
@@ -67,13 +68,11 @@ export default class OrderPage extends BasePage {
    * @param expectedTooltip - Expected tooltip text (e.g., "SST")
    */
   verifyStarTooltip(expectedTooltip: string): void {
-    cy.get(this.starIcon)
-      .trigger('mouseover', { force: true })
-      .invoke('text')
-      .then((rawText: string) => {
-        const normalized = rawText.replace(/\u00a0/g, '').trim();
-        expect(normalized).to.eq(expectedTooltip);
-      });
+    // Step 1: Hover over the star icon to trigger the tooltip
+    cy.get(this.starIcon).trigger('mouseover', { force: true });
+    
+    // Step 2: Wait for the tooltip element to appear and verify its text
+    cy.get(this.starTooltip).should('contain', expectedTooltip); 
   }
 
   /**

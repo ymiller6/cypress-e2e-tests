@@ -10,7 +10,6 @@ describe('Test order Case basic without POM', () => {
     cy.contains('button', 'Login').click();
 
     // Open menu and search for order
-    cy.wait(2000);
     cy.get('[data-cy="st-button-menu"]').click();
     cy.get('#menuSearchInput').type('order')
     cy.contains('a', 'Order').click();
@@ -29,22 +28,21 @@ describe('Test order Case basic without POM', () => {
     cy.contains('Qa Patient').click();
 
     //6.Hover the star of the Albumin blood test and verify that the text SST appears in the tooltip.
-    cy.get('.RED > .d-flex > .mat-icon')
-      .invoke('text')
-      .then((rawText: string) => {
-        // Remove non-breaking spaces and trim the text
-        const normalized = rawText.replace(/\u00a0/g, '').trim();
-        expect(normalized).to.eq('star');
-      });
-
+    cy.get('.RED > .d-flex > .mat-icon').trigger('mouseover', { force: true });
+    cy.get('.st-tooltip').should('contain', 'SST'); 
+        
+      
     //7.Mark the Albumin checkbox and verify the test was added to the ordered tests list as “109 - ALB”.
     cy.get('input[type="checkbox"]').check().should('be.checked').and('have.value', 'on');
     cy.get('body').should('be.visible').and('contain.text', '109 - ALB');
+    
+    cy.get('button:contains("Save")') 
+    .should('be.visible')
+    .and('be.enabled');
 
-    //.8 click on Save
-    cy.wait(2000);
+    
+    //8. intercept url befor click on save:
 
-    //intercept url befor click on save:
     cy.intercept('https://qa-candidates.labos.cloud/api/lab/order**').as('saveOrder');
     cy.contains('Save').click();
 

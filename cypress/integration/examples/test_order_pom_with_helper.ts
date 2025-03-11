@@ -18,7 +18,7 @@ describe("FLD-102: E2E Order Test using POM with Helper", () => {
 
 
     // Step 2: Open Menu and Navigate to Order Screen
-    cy.wait(2000);
+    
     orderPage.openMenu();
     orderPage.searchForOrder("order");
 
@@ -32,13 +32,17 @@ describe("FLD-102: E2E Order Test using POM with Helper", () => {
     orderPage.searchAndSelectPatient("Qa P", "Qa Patient");
 
     // Step 6: Hover over star icon and verify tooltip text is "star"
-    orderPage.verifyStarTooltip("star");
+    orderPage.verifyStarTooltip("SST");
 
     // Step 7: Mark Albumin test checkbox and verify ordered tests list contains "109 - ALB"
     orderPage.markAlbuminTest();
 
+    cy.get('button:contains("Save")') 
+    .should('be.visible')
+    .and('be.enabled');
+
     // Step 8: Intercept API call for saving order and click Save
-    cy.wait(2000);
+  
     cy.intercept('https://qa-candidates.labos.cloud/api/lab/order**').as('saveOrder');
 
     orderPage.saveOrder();
