@@ -24,10 +24,3 @@ jobs:
 
       - name: Run Cypress Login Test
         run: npx cypress run --spec "cypress/e2e/test_login_pom.cy.ts"
-
-      - name: Upload Cypress Videos (if test fails)
-        if: failure()
-        uses: actions/upload-artifact@v3
-        with:
-          name: cypress-videos
-          path: cypress/videos
