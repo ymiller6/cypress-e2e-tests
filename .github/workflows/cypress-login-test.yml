@@ -23,4 +23,4 @@ jobs:
         run: npm install
 
       - name: Run Cypress Login Test
-        run: npx cypress run --spec "cypress/e2e/test_login_pom.cy.ts"
+        run: npx cypress run --spec "cypress/integraton/examples/test_login_pom.cy.ts"
