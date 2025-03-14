@@ -10,6 +10,7 @@ module.exports = defineConfig({
     specPattern: "cypress/integration/examples/*.ts",
   },
   env: {
+    "allure": true,
     dashboardUrl: '/2/dashboard', // Relative URL path
   },
 });

@@ -10,7 +10,9 @@
   "description": "",
   "devDependencies": {
     "@cypress/webpack-dev-server": "^4.0.1",
+    "@shelex/cypress-allure-plugin": "^2.40.2",
     "@types/node": "^22.13.9",
+    "allure-commandline": "^2.33.0",
     "cypress": "^14.1.0",
     "typescript": "^5.8.2"
   }
