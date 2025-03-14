@@ -1,4 +1,4 @@
-name: Cypress Tests with Allure Report genrated
+name: Cypress Tests with Allure Report Genrated
 
 on:
   push:
