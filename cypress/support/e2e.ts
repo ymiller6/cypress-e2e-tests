@@ -1,28 +1,6 @@
 import '@shelex/cypress-allure-plugin';
 import "allure-cypress";
 import './commands'
-import fs from "fs";
-import { addAttachment } from "allure-cypress";
-
-afterEach(() => {
-  // Attach HAR file
-  const harFilePath = "path/to/har/file.har";
-  if (fs.existsSync(harFilePath)) {
-    addAttachment("HAR File", fs.readFileSync(harFilePath), "application/json");
-  }
-
-  // Attach Screenshot
-  const screenshotPath = "path/to/screenshot.png";
-  if (fs.existsSync(screenshotPath)) {
-    addAttachment("Screenshot", fs.readFileSync(screenshotPath), "image/png");
-  }
-
-  // Attach Trace ID
-  const traceId = "your-trace-id"; // Fetch dynamically based on your app logic
-  if (traceId) {
-    addAttachment("Trace ID", traceId, "text/plain");
-  }
-});
 
 // ***********************************************************
 // This example support/e2e.js is processed and
