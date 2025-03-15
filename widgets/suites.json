@@ -1,1 +1,1 @@
-{"total":1,"items":[{"uid":"9d365f192ff78e4de4162e576ccd565c","name":"FLD-100:Login Tests Suite","statistic":{"failed":0,"broken":0,"skipped":0,"passed":7,"unknown":0,"total":7}}]}
+{"total":1,"items":[{"uid":"9d365f192ff78e4de4162e576ccd565c","name":"FLD-100:Login Tests Suite","statistic":{"failed":1,"broken":0,"skipped":0,"passed":7,"unknown":0,"total":8}}]}
