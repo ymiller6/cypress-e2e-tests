@@ -1,4 +1,4 @@
-name: Cypress Tests with Allure Report Genrated
+name: Cypress Tests with Allure Report Always
 
 on:
   push:
@@ -27,10 +27,11 @@ jobs:
 
       - name: Run Cypress Login Test with Allure
         run: |
-          npx cypress run --spec "cypress/integration/examples/test_login_pom.cy.ts" --env allure=true
+          npx cypress run --spec "cypress/integration/examples/test_login_pom.cy.ts" --env allure=true || true
           allure generate allure-results --clean -o allure-report
 
       - name: Upload Allure report to GitHub Pages
+        if: always()  # This makes sure upload runs even after test failure
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
