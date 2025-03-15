@@ -17,6 +17,15 @@ describe("FLD-100:Login Tests Suite", () => {
         loginPage.navigate();
     });
 
+    it("GID-997: this test should fail for debug purpose", (): void => {
+        cy.allure().startStep('should fail for debug');
+        loginPage.login(userData.invalidUser.username, userData.invalidUser.password);
+        basePage.getElementText('#mat-mdc-error-2').then((text: string) => {
+            expect(text.trim()).to.include("this test is failed on purpose for");
+            cy.allure().endStep();
+        });
+    });
+
     it("GID-998: login with valid credentials", (): void => {
         // Start a step for logging in
         cy.allure().startStep('Login with valid credentials');
