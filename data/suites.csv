@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1996","GID-1003: login with empty user name and password - alert appears","FLD-100:Login Tests Suite","Sat Mar 15 12:17:47 UTC 2025","passed","Sat Mar 15 12:17:49 UTC 2025","","","",""
+"","1988","GID-1000: login page appearance","FLD-100:Login Tests Suite","Sat Mar 15 12:17:40 UTC 2025","passed","Sat Mar 15 12:17:42 UTC 2025","","","",""
+"","2291","GID-1001: login with valid credentials","FLD-100:Login Tests Suite","Sat Mar 15 12:17:42 UTC 2025","passed","Sat Mar 15 12:17:44 UTC 2025","","","",""
+"","2690","GID-1002: login with invalid credentials - alert appears","FLD-100:Login Tests Suite","Sat Mar 15 12:17:44 UTC 2025","passed","Sat Mar 15 12:17:47 UTC 2025","","","",""
+"","7132","GID-998: login with valid credentials","FLD-100:Login Tests Suite","Sat Mar 15 12:17:31 UTC 2025","passed","Sat Mar 15 12:17:38 UTC 2025","","","",""
+"","1414","GID-999: login page appearance","FLD-100:Login Tests Suite","Sat Mar 15 12:17:38 UTC 2025","passed","Sat Mar 15 12:17:40 UTC 2025","","","",""
