@@ -41,9 +41,11 @@ class LoginPage extends BasePage {
    * @param password - The password
    */
   login(username: string, password: string): void {
+    cy.allure().startStep(`Login as user: ${username}`);
     this.typeText(this.usernameField, username);
     this.typeText(this.passwordField, password);
     this.clickElement(this.loginButton);
+    cy.allure().endStep();
   }
 
   /**

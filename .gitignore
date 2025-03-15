@@ -1,3 +1,4 @@
 node_modules/
 .env
-e2e/
+allure-results/
+allure-report/

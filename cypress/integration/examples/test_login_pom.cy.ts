@@ -3,6 +3,7 @@ import LoginPage from "./LoginPage";
 import BasePage from "./basePage";
 import userData from "./userData";
 import DashboardPage from "./DashboardPage";
+import allure from '@shelex/cypress-allure-plugin';
 
 const userNameAlert = "Username is required"
 const passwordAlert = "Password is required"
@@ -15,6 +16,26 @@ describe("FLD-100:Login Tests Suite", () => {
     beforeEach((): void => {
         loginPage.navigate();
     });
+
+    it("GID-998: login with valid credentials", (): void => {
+        // Start a step for logging in
+        cy.allure().startStep('Login with valid credentials');
+        loginPage.login(userData.validUser.username, userData.validUser.password);
+        cy.allure().endStep();
+      
+        // Start a step for verifying the dashboard URL
+        cy.allure().startStep('Verify dashboard URL');
+        dashboardPage.verifyUrl();
+        cy.allure().endStep();
+      });
+
+    it("GID-999: login page appearance", () => {
+        cy.allure().startStep("Visit login page and check appearance");
+    
+        loginPage.loginPageAppearance();
+    
+        cy.allure().endStep();
+      });
 
     it("GID-1000: login page appearance", (): void => {
         loginPage.loginPageAppearance();

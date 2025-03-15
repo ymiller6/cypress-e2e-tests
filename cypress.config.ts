@@ -1,16 +1,23 @@
-const { defineConfig } = require("cypress");
+
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
+import { defineConfig } from "cypress";
+import { allureCypress } from "allure-cypress/reporter";
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: 'https://qa-candidates.labos.cloud', // Base URL
-    setupNodeEvents(on: any, config: any) {
-      // implement node event listeners here
-    },
-    //specPattern: 'cypress/integration/examples/*.js'
-    specPattern: "cypress/integration/examples/*.ts",
+    baseUrl: 'https://qa-candidates.labos.cloud',
+    specPattern: "cypress/integration/examples/*.ts", // Base URL
+    setupNodeEvents(on, config) {
+    // Register the Allure plugin
+      allureCypress(on, config, {
+        resultsDir: "allure-results",
+      });
+      allureWriter(on, config); // Write allure results
+      return config;
+    }, 
   },
   env: {
-    "allure": true,
+    allure: true,
     dashboardUrl: '/2/dashboard', // Relative URL path
   },
 });
