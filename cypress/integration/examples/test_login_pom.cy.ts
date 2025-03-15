@@ -70,5 +70,10 @@ describe("FLD-100:Login Tests Suite", () => {
         loginPage.loginPageAppearance();
     });
 
+    it("GID-996: fail to check screen shots in allure", (): void => {
+        cy.contains('button', 'Login').click();
+        loginPage.verifyUserPasswordAlerts('kukuku', passwordAlert)
+    });
+
 
 });
